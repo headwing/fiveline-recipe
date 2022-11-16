@@ -1,5 +1,7 @@
 @charset "utf-8";
-html,body{height: 100%;}
+html, body {
+    height: 100%;
+}
 * {
     font-family: 'Gowun Dodum', sans-serif;
 }
@@ -22,31 +24,24 @@ html,body{height: 100%;}
 #header_nick {
     display: flex;
 }
+
 #header_nick .subtitle {
     padding: 10px;
     margin: 0px;
 }
 #header_top .logo a {
     display: block;
-    width: 400px; height: 100px;
+    width: 400px;
+    height: 100px;
     background-image: url("../images/LOGO_main.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     text-indent: -9999px;
 }
-#header_top.fixed {
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    background-color: white;
-    top: 0;
-    width: 100%;
-}
-
 .sign-out {
     float: left;
     margin-left: 20px;
-}
-.sign-out {
     background: #57A719;
     width: 120px;
     height: 45px;
@@ -54,19 +49,21 @@ html,body{height: 100%;}
     text-align: center;
 }
 .sign-out a {
-    display: block;
-    font-size: 16px;
-    letter-spacing: 0.095em;
-    color: white;
-    line-height: 45px;
+    background: #57A719;
+    color: #fff;
+    width: 120px;
+    height: 45px;
+    border: 0 none;
+    border-radius: 5px;
+    text-align: center;
     font-weight: bold;
+    letter-spacing: 0.095em;
 }
 .sign-out:hover {
     background: #364F18;
 }
 
-.menu-upload{
-    background: #f2f2f2;
+.menu-upload {
     width: 1260px;
     height: 500px;
     margin: 0 auto;
@@ -117,6 +114,35 @@ html,body{height: 100%;}
     content: "";
     display: block;
     border-width: 30px;
+    font-weight: normal;
+    letter-spacing: 0.095em;
+    margin: auto;
+}
+
+.menu-upload .button:hover {
+    background: #364F18;
+}
+
+.menu {
+    margin-top: 40px;
+}
+
+.menu .card {
+    border: 0 none;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.menu .card .card-img {
+    position: relative;
+}
+
+.menu .card .card-body:after {
+    content: "";
+    display: block;
+    border-width: 50px;
     border-color: transparent transparent white transparent;
     border-style: solid;
     width: 60px;
@@ -126,14 +152,19 @@ html,body{height: 100%;}
     left: 50%;
     transform: translate(-50%);
 }
-.menu .card .mask{
+.menu .card .mask {
     position: absolute;
-    width: 100%;height: 100%;
-    background: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
     top: 0;
     transition: 300ms;
 }
-.menu .card:hover .mask{opacity: 0;}
+
+.menu .card:hover .mask {
+    opacity: 0;
+}
+
 .menu .time {
     color: #A75F46;
 }
@@ -153,14 +184,13 @@ html,body{height: 100%;}
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-
 .searchinp {
-    width: 400px;
+    width: 600px;
     height: 50px;
     border-radius: 25px;
     border: 2px solid #000;
     font-size: 18px;
-    text-indent: 90px;
+    text-indent: 125px;
     box-shadow: 5px 5px 0 #A75F46, -5px -5px 0 #57A719;
 }
 .searchtitle {
@@ -173,11 +203,16 @@ html,body{height: 100%;}
     top: 80%;
     left: 20px;
     transform: translateY(-50%);
+    top: 65%;
+    left: 20px;
+    transform: translateY(-50%);
+    border: 0 none;
 }
 .searchbutton {
     position: absolute;
     right: 10px;
     top: 80%;
+    top: 67%;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
@@ -192,25 +227,32 @@ html,body{height: 100%;}
     height: 200px;
     background: #A38259;
     color: #fff;
+    position: relative;
 }
 .footer {
     width: 1260px;
     margin: 0 auto;
 }
-#footerwrap .logo a {
+.footerend {
     float: left;
+    background: none;
+}
+#footerwrap .logo a {
+    position: absolute;
+    top: 20px;
+    left: 80px;
     display: block;
-    width: 160px;
-    height: 200px;
-    /*background-image: url(../images/LOGO_w.png);*/
-    background-color: #000;
+    width: 240px;
+    height: 150px;
+    background-image: url(../images/LOGO_FOOTER.png);
     background-position: center;
     background-repeat: no-repeat;
     text-indent: -9999px;
-    margin-right: 75px;
 }
 .footerend {
-    float: left;
+    position: absolute;
+    top: 0px;
+    left: 360px;
     margin: 40px;
 }
 .footer1 li {
@@ -233,6 +275,9 @@ html,body{height: 100%;}
 }
 .footer2 h4 {
     font-size: 12px;
+    position: absolute;
+    font-size: 12px;
+    left: 32px;
 }
 .footer2 li {
     float: left;

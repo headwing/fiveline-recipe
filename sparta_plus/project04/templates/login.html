@@ -56,7 +56,6 @@
             }
             body {
                 background-color: #F2F2F2;
-
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -65,11 +64,21 @@
             }
             .order {
                 width: 500px;
-
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .order .logo a {
+                display: block;
+                width: 250px;
+                height: 250px;
+                background-image: url("../static/images/LOGO_login.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-indent: -9999px;
             }
             #secondBtn {
                 margin-left: 16px;
@@ -95,9 +104,10 @@
     </head>
     <body>
     <div class="order">
-        <img src="../static/images/LOGO_login.png" alt="" class="login_logo">
+        <h1 class="logo">
+            <a href="#!">LOGO</a>
+        </h1>
         <h1> 자취인을 위한 다섯 줄 레시피에 오신 것을 환영합니다.</h1>
-
         <div class="input-group mb-3" id="idInput">
             <input type="text" class="form-control" placeholder="ID를 입력하세요." aria-label="Username"
                    aria-describedby="basic-addon1" id="userid">
@@ -109,8 +119,8 @@
         </div>
 
         <div class="btnList">
-            <button type="button" class="btn btn-outline-dark" onclick="login()">Sign In</button>
-            <a href="register"><button type="button" class="btn btn-dark" id="secondBtn">Sign Up</button></a>
+            <button type="button" class="btn btn-outline-success" onclick="login()">Sign In</button>
+            <a href="register"><button type="button" class="btn btn-success" id="secondBtn">Sign Up</button></a>
         </div>
     </div>
 

@@ -44,13 +44,12 @@
 </head>
 
 <body>
-{#    <h1>메인페이지 접속</h1>#}
-{#    <p>#}
-{#        <h1 class="title">로그인하고 5시간 동안만 볼 수 있는 페이지입니다.</h1>#}
-{#        <h1 class="subtitle">계속 새로고침 해보세요</h1>#}
-{#    </p>#}
-{#    <h5 class="subtitle">나의 닉네임은: {{ nickname }}</h5>#}
-
+<!--?{#    <h1>메인페이지 접속</h1>#}-->
+<!--?{#    <p>#}-->
+<!--?{#        <h1 class="title">로그인하고 5시간 동안만 볼 수 있는 페이지입니다.</h1>#}-->
+<!--?{#        <h1 class="subtitle">계속 새로고침 해보세요</h1>#}-->
+<!--?{#    </p>#}-->
+<!--?{#    <h5 class="subtitle">나의 닉네임은: {{ nickname }}</h5>#}-->
     <header id="main_header">
         <div id="headerwrap">
             <div id="header_top">
@@ -186,17 +185,23 @@
         </div>
     </div>
 
-    <div class="search">
-        <div class="searchwrap">
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <br>
-            <form action="#" method="post">
-                <label for="search" class="searchtitle">SEARCH</label>
-                <input type="text" id="search" placeholder="검색어를 입력하세요." class="searchinp">
-                <input type="submit" value="Search" class="searchbutton">
-            </form>
+<div class="search">
+    <div class="searchwrap">
+        <div class="searchtext">
+            <h2>찾고 있는 레시피가 없다면?</h2>
         </div>
+        <br>
+        <select name="search" id="search" class="searchtitle">
+            <option value="">--검색--</option>
+            <option value="0">제목</option>
+            <option value="1">내용</option>
+            <option value="2">제목+내용</option>
+        </select>
+        <input type="text" id="keyword" placeholder="검색어를 입력하세요."
+               class="searchinp" required>
+        <input type="submit" value="Search" class="searchbutton" onclick="search()">
     </div>
+</div>
 
     <footer id="footerwrap">
         <div class="footer">
@@ -206,7 +211,7 @@
             <div class="footerend">
                 <div class="footer1">
                     <ul class="clearfix">
-                        <li><a href="#!">ⓒFiveLineRecipe, LLC 2022</a></li>
+                        <li><a href="#!">ⓒ FiveLineRecipe, LLC 2022</a></li>
                         <li><a href="#!">DO NOT “SELL” MY INFO</a></li>
                         <li><a href="#!">AD PREFERENCES</a></li>
                         <li><a href="#!">PRIVACY</a></li>
