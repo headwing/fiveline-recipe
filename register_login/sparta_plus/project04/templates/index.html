@@ -48,7 +48,7 @@
 {#        <h1 class="title">로그인하고 5시간 동안만 볼 수 있는 페이지입니다.</h1>#}
 {#        <h1 class="subtitle">계속 새로고침 해보세요</h1>#}
 {#    </p>#}
-    <h5 class="subtitle">나의 닉네임은: {{ nickname }}</h5>
+{#    <h5 class="subtitle">나의 닉네임은: {{ nickname }}</h5>#}
 
     <header id="main_header">
         <div id="headerwrap">
@@ -56,18 +56,23 @@
                 <h1 class="logo">
                     <a href="#!">LOGO</a>
                 </h1>
-                <button class="sign-out" onclick="logout()">SIGN OUT</button>
+                <div id="header_nick">
+                    <h5 class="subtitle">{{ nickname }}님 환영합니다!</h5>
+                    <button class="sign-out" onclick="logout()">SIGN OUT</button>
+                </div>
             </div>
         </div>
     </header>
 
     <div class ="menu-upload">
         <div class="upload-text">
-            <h2>Lorem ipsum dolor</h2>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+            <h5>바쁘고 귀찮은 자취人들을 위한 </h5>
+            <h2>초 간단 레시피 공유 페이지</h2>
+            <h4>다섯 줄로 자신만의 레시피를 공유해보세요!</h4>
             <a href="#!">
-                <div class="button">button</div>
+                <div class="button">포스팅하기</div>
             </a>
+
         </div>
     </div>
 
