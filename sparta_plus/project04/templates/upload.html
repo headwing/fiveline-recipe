@@ -103,72 +103,69 @@ function show_nickname(){
     }
 </script>
 <body>
-<div class="upload-menu">
 
-            <div class="art_sign">
-                <form>
-                    <div class="input-group input-group-lg" id="titleImage">
-                        <span class="input-group-text label" id="inputGroup-sizing-lg1">레시피 제목</span>
-                        <input id="title" type="text" class="form-control"
-                               required placeholder="제목을 입력해주세요.">
+        <div class="art_sign">
+            <form>
+                <div class="input-group input-group-lg" id="titleImage">
+                    <span class="input-group-text label" id="inputGroup-sizing-lg1">레시피 제목</span>
+                    <input id="title" type="text" class="form-control"
+                           required placeholder="제목을 입력해주세요.">
 
-                        <div class="nicknamebox">
-                        </div>
-
-                        <span class="input-group-text label" id="inputGroup-sizing-lg4">사진</span>
-                        <input id="image" type="file" name="myImage" accept="image/*"/>
-
+                    <div class="nicknamebox">
                     </div>
 
-                    <div id="cookingMethod">
-                        <span class="input-group-text label" id="inputGroup-sizing-lg5"><p>조리방법</p></span>
-                        <div class="input-group">
-                        <textarea id="content1" class="form-control" name="content1" rows="1" cols="160"
-                                  placeholder="1번 조리방법을 작성해주세요." required></textarea>
-                        </div>
-                        <div class="input-group">
-                        <textarea id="content2" class="form-control" name="content2" rows="1" cols="160"
-                                  placeholder="2번 조리방법을 작성해주세요." required></textarea>
-                        </div>
-                        <div class="input-group">
-                        <textarea id="content3" class="form-control" name="content3" rows="1" cols="160"
-                                  placeholder="3번 조리방법을 작성해주세요." required></textarea>
-                        </div>
-                        <div class="input-group">
-                        <textarea id="content4" class="form-control" name="content4" rows="1" cols="160"
-                                  placeholder="4번 조리방법을 작성해주세요." required></textarea>
-                        </div>
-                        <div class="input-group">
-                        <textarea id="content5" class="form-control" name="content5" rows="1" cols="160"
-                                  placeholder="5번 조리방법을 작성해주세요." required></textarea>
-                        </div>
-                    </div>
+                    <span class="input-group-text label" id="inputGroup-sizing-lg4">사진</span>
+                    <input id="image" type="file" name="myImage" accept="image/*"/>
 
-                    <div class="input-group input-group-lg input2">
-                        <span class="input-group-text label">조리시간</span>
-                        <select required id="cookingtime" class="form-select" aria-label="Default select example">
-                            <option value="" disabled selected>조리시간을 선택해주세요</option>
-                            <option value="5분">5분</option>
-                            <option value="10분">10분</option>
-                            <option value="20분">20분</option>
-                        </select><br>
-                        <span class="input-group-text label">별점</span>
-                        <select required id="star" class="form-select" aria-label="Default select example">
-                            <option value="" disabled selected>레시피 별점을 남겨주세요</option>
-                            <option value="*">*</option>
-                            <option value="**">**</option>
-                            <option value="***">***</option>
-                            <option value="****">****</option>
-                            <option value="*****">*****</option>
-                        </select>
-                    </div>
-                    <div id="buttons">
-                        <button type="button" class="btn btn-outline-dark" onclick="save_post()">Post</button>
-                        <button type="button" class="btn btn-dark" onclick="location.href='/'">Cancel</button>
-                    </div>
+                </div>
 
-            </div>
-</div>
+                <div id="cookingMethod">
+                    <span class="input-group-text label" id="inputGroup-sizing-lg5">조리방법</span>
+                    <div class="input-group">
+                    <textarea id="content1" class="form-control" name="content1" rows="1" cols="160"
+                              placeholder="1번 조리방법을 작성해주세요." required></textarea>
+                    </div>
+                    <div class="input-group">
+                    <textarea id="content2" class="form-control" name="content2" rows="1" cols="160"
+                              placeholder="2번 조리방법을 작성해주세요." required></textarea>
+                    </div>
+                    <div class="input-group">
+                    <textarea id="content3" class="form-control" name="content3" rows="1" cols="160"
+                              placeholder="3번 조리방법을 작성해주세요." required></textarea>
+                    </div>
+                    <div class="input-group">
+                    <textarea id="content4" class="form-control" name="content4" rows="1" cols="160"
+                              placeholder="4번 조리방법을 작성해주세요." required></textarea>
+                    </div>
+                    <div class="input-group">
+                    <textarea id="content5" class="form-control" name="content5" rows="1" cols="160"
+                              placeholder="5번 조리방법을 작성해주세요." required></textarea>
+                    </div>
+                </div>
+
+                <div class="input-group input-group-lg input2">
+                    <span class="input-group-text label">조리시간</span>
+                    <select required id="cookingtime" class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>조리시간을 선택해주세요</option>
+                        <option value="5분">5분</option>
+                        <option value="10분">10분</option>
+                        <option value="20분">20분</option>
+                    </select><br>
+                    <span class="input-group-text label">별점</span>
+                    <select required id="star" class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>레시피 별점을 남겨주세요</option>
+                        <option value="*">*</option>
+                        <option value="**">**</option>
+                        <option value="***">***</option>
+                        <option value="****">****</option>
+                        <option value="*****">*****</option>
+                    </select>
+                </div>
+                <div id="buttons">
+                    <button type="button" class="btn btn-outline-dark" onclick="save_post()">Post</button>
+                    <button type="button" class="btn btn-dark" onclick="location.href='/'">Cancel</button>
+                </div>
+        </div>
 </form>
 </div>
 

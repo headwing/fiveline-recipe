@@ -40,6 +40,17 @@
             align-items: center;
             justify-content: center;
         }
+
+        .order .logo a {
+            display: block;
+            width: 250px;
+            height: 250px;
+            background-image: url("../static/images/LOGO_login.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
         .inputText {
             width: 300px;
         }
@@ -80,9 +91,11 @@
     </head>
     <body>
     <div class="order">
-        <h1>FiveLineRecipe</h1>
-        <p>회원가입</p>
-
+        <h1 class="logo">
+            <a href="login">LOGO</a>
+        </h1>
+        <h4>회원가입</h4>
+        <br>
         <div class="input-group mb-3 inputText">
             <input type="text" class="form-control" placeholder="ID를 입력하세요." aria-label="Username"
                    aria-describedby="basic-addon1" id="userid">
@@ -99,7 +112,7 @@
         </div>
 
         <div class="btnList">
-            <button type="button" class="btn btn-dark" id="secondBtn" onclick="register()">Sign Up</button>
+            <button type="button" class="btn btn-success" id="secondBtn" onclick="register()">Sign Up</button>
         </div>
     </div>
 
