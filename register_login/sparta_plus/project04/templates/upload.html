@@ -66,7 +66,8 @@ body {background-color: #f2f2f2;}
             data: {title_give: title,  cookingtime_give: cookingtime, content1_give: content1, content2_give: content2, content3_give: content3, content4_give: content4, content5_give: content5, image_give: image, star_give: star},
             success: function (response) {
                 alert(response['msg'])
-                window.location.reload()
+                window.location.href = '/'
+
             }
         });
     }
@@ -147,10 +148,11 @@ function show_nickname(){
                       </select>
                 </div>
                 <div id="space"></div>
-                <div class="mybtn" id="buttons">
+                <a class="mybtn" id="buttons">
                     <button type="button" class="btn btn-primary btn-lg" onclick="save_post()">Post</button>
-                    <button type="button" class="btn btn-secondary btn-lg" onclick="location.href='/home'">Cancel</button>
+                     <button type="button" class="btn btn-secondary btn-lg" onclick="location.href='/'">Cancel</button>
                 </div>
+    </div>
             </form>
             </div>
 
