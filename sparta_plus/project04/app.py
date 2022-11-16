@@ -188,10 +188,12 @@ def api_valid():
 @app.route("/FLR/commentPosting", methods=["POST"])
 def comment_post():
     comment_receive = request.form['comment_give']
+    title_receive = request.form['title_give']
     doc = {
-        'comment': comment_receive
+        'comment': comment_receive,
+        'title': title_receive
     }
-    db.post.insert_one(doc)
+    db.comment.insert_one(doc)
     return jsonify({'msg': 'POST 게시 완료!'})
 
 ########### 저장된 게시물의 정보 불러오기 ########
@@ -200,6 +202,12 @@ def post_get():
     title_receive = str(request.form['title_give'])
     posting_list = db.post.find_one({'recipe': title_receive}, {'_id': False})
     return jsonify({'present': posting_list})
+@app.route("/comment", methods=["POST"])
+def comment_get():
+    title_receive = str(request.form['title_give'])
+    posting_list = list(db.comment.find({'title': title_receive}, {'_id': False}))
+    print(posting_list)
+    return jsonify({'comment': posting_list})
 
 
 if __name__ == '__main__':
