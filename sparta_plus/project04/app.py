@@ -187,12 +187,22 @@ def api_valid():
 ########### 코멘트 저장하는 것 ##############
 @app.route("/FLR/commentPosting", methods=["POST"])
 def comment_post():
+    title_receive = str(request.form['title_give'])
     comment_receive = request.form['comment_give']
     doc = {
+        'title': title_receive,
         'comment': comment_receive
     }
-    db.post.insert_one(doc)
+    db.comment.insert_one(doc)
     return jsonify({'msg': 'POST 게시 완료!'})
+
+############## 코멘트 불러오기 ###################
+@app.route("/comment", methods=["POST"])
+def comment_get():
+    title_receive = str(request.form['title_give'])
+    comments_list = list(db.comment.find({'title': title_receive}, {'_id': False}))
+    print(comments_list)
+    return jsonify({'comments': comments_list})
 
 ########### 저장된 게시물의 정보 불러오기 ########
 @app.route("/present", methods=["POST"])

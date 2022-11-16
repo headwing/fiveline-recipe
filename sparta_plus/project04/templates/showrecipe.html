@@ -56,6 +56,7 @@
         //const name = getId();
         // listing(name);
         loadcomment();
+        show_comment()
     });
 
     function getId() {
@@ -101,13 +102,6 @@
             })
     }
 
-
-
-
-
-
-
-
     // $(document).ready(function () {
     //     presenting();
     //     show_comment();
@@ -115,12 +109,12 @@
 
     function show_comment() {
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: '/comment',
-            data: {},
+            data: {title_give: getId()},
             success: function (response) {
-
-                let rows = response['comments']
+                let rows = response['comment']
+                console.log(rows[0][comment])
                 for (let i = 0; i < rows.length; i++) {
                     let comment = rows[i]['comments']
                     let temp_html = `<tr>
@@ -187,7 +181,7 @@
         $.ajax({
             type: 'POST',
             url: '/FLR/commentPosting',
-            data: {comment_give: $('#comment').val()},
+            data: {title_give: getId(), comment_give: $('#comment').val()},
             success: function (response) {
                 alert(response['msg'])
                 window.location.reload()
@@ -204,7 +198,7 @@
         <img class="img"
              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png">
         <div id="contents">
-            
+
         </div>
 
         <div class="form-floating">
