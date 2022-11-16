@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">a
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,8 +55,13 @@
     $(document).ready(function () {
         //const name = getId();
         // listing(name);
+<<<<<<< HEAD
         loadcomment();
         show_comment()
+=======
+        showcomment();
+        loadrecipe();
+>>>>>>> e18ddeef31be8e39ace268935476f046d3e9b2c0
     });
 
     function getId() {
@@ -65,7 +70,7 @@
         return urlParams.get('title');
     }
 
-    function loadcomment(){
+    function loadrecipe(){
         $.ajax({
             type: "POST",
             url: "/present",
@@ -102,6 +107,7 @@
             })
     }
 
+<<<<<<< HEAD
     // $(document).ready(function () {
     //     presenting();
     //     show_comment();
@@ -115,8 +121,20 @@
             success: function (response) {
                 let rows = response['comment']
                 console.log(rows[0][comment])
+=======
+    function showcomment(){
+        $.ajax({
+            type: "POST",
+            url: "/comment",
+            data: {title_give: getId()},
+            success: function (response) {
+                console.log(response)
+                let rows = response['comment']
+                console.log(rows)
+>>>>>>> e18ddeef31be8e39ace268935476f046d3e9b2c0
                 for (let i = 0; i < rows.length; i++) {
-                    let comment = rows[i]['comments']
+                    let comment = rows[i]['comment']
+                    console.log(comment)
                     let temp_html = `<tr>
                                             <td>${comment}</td>
                                         </tr>`
@@ -126,62 +144,21 @@
         });
     }
 
-    //
-    // function presenting() {
-    //     $.ajax({
-    //         type: 'GET',
-    //         url: '/present',
-    //         data: {},
-    //         success: function (response) {
-    //             console.log(response)
-    //             let rows = response['present']
-    //             console.log(rows.length)
-    //             for (let i = 0; i < rows.length; i++) {
-    //                 console.log(i)
-    //                 //let image = rows[i]['image']
-    //                 let recipe = rows[i]['recipe']
-    //                 //let nickname = rows[i]['nickname']
-    //                 let star = rows[i]['star']
-    //                 let cookingtime = rows[i]['cookingtime']
-    //                 let content1 = rows[i]['content1']
-    //                 let content2 = rows[i]['content2']
-    //                 let content3 = rows[i]['content3']
-    //                 let content4 = rows[i]['content4']
-    //                 let content5 = rows[i]['content5']
-    //
-    //                 console.log(content1)
-    //
-    //
-    //                 let temp_html = `<div>
-    //                 <h2 id="recipe-box">${recipe}</h2>
-    //                 <div class="option">
-    //                    <h15 id="star-box">${star}</h15> / <h14 id="cookingtime-box">${cookingtime}</h14>
-    //                 </div>
-    //                 <div class="comm" id="content">
-    //                     <P>1. ${content1}</P>
-    //                     <P>2. ${content2}</P>
-    //                     <P>3. ${content3}</P>
-    //                     <P>4. ${content4}</P>
-    //                     <P>5. ${content5}</P>
-    //                 </div>
-    //                 </div>`
-    //
-    //                 $('#contents').append(temp_html)
-    //
-    //             }
-    //         }
-    //     });
-    // }
-
 
     function commentPosting() {
+        const urlParams = new URLSearchParams(location.search);
+        console.log(urlParams.get('title'));
         let comment = $('#comment').val()
-        console.log(comment)
+        let title = urlParams.get('title')
 
         $.ajax({
             type: 'POST',
             url: '/FLR/commentPosting',
+<<<<<<< HEAD
             data: {title_give: getId(), comment_give: $('#comment').val()},
+=======
+            data: {comment_give: comment, title_give:title},
+>>>>>>> e18ddeef31be8e39ace268935476f046d3e9b2c0
             success: function (response) {
                 alert(response['msg'])
                 window.location.reload()

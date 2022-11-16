@@ -189,9 +189,15 @@ def api_valid():
 def comment_post():
     title_receive = str(request.form['title_give'])
     comment_receive = request.form['comment_give']
+    title_receive = request.form['title_give']
     doc = {
+<<<<<<< HEAD
         'title': title_receive,
         'comment': comment_receive
+=======
+        'comment': comment_receive,
+        'title': title_receive
+>>>>>>> e18ddeef31be8e39ace268935476f046d3e9b2c0
     }
     db.comment.insert_one(doc)
     return jsonify({'msg': 'POST 게시 완료!'})
@@ -210,6 +216,12 @@ def post_get():
     title_receive = str(request.form['title_give'])
     posting_list = db.post.find_one({'recipe': title_receive}, {'_id': False})
     return jsonify({'present': posting_list})
+@app.route("/comment", methods=["POST"])
+def comment_get():
+    title_receive = str(request.form['title_give'])
+    posting_list = list(db.comment.find({'title': title_receive}, {'_id': False}))
+    print(posting_list)
+    return jsonify({'comment': posting_list})
 
 
 if __name__ == '__main__':
