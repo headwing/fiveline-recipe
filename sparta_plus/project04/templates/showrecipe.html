@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">a
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -11,45 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Btang&family=Gugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <!--        폰트-->
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/showrecipe.css">
 
-    <title></title>
 </head>
-<style>
-    * {
-        font-family: 'Gowun Batang';
-    }
-
-    .content {
-        width: 500px;
-        margin: 60px auto 50px auto;
-        padding-bottom: 60px;
-    }
-
-
-    .img {
-        width: 500px;
-        margin: 20px auto 20px auto;
-    }
-
-    .comm {
-        margin: 30px auto 0px auto;
-        width: 485px;
-
-    }
-
-    .box {
-        margin: 10px 0px 10px 0px;
-
-    }
-
-    .option {
-        text-align: right;
-    }
-
-</style>
 
 <script>
     $(document).ready(function () {
@@ -199,19 +167,25 @@
 
 
 <body>
-    <h1>FiveLineRecipe</h1>
-    <div class="content">
-        <img class="img"
-             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png">
-        <div id="contents">
-            
+    <header id="main_header">
+        <div id="headerwrap">
+            <div id="header_top">
+                <h1 class="logo">
+                    <a href="index">LOGO</a>
+                </h1>
+            </div>
         </div>
+    </header>
 
-        <div class="form-floating">
+    <div class="content">
+        <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png">
+        <div id="contents"></div>
+
+        <div class="form-floating comment">
             <div>
                 <textarea id="comment" class="form-control" placeholder="코멘트를 남겨주세요"></textarea>
             </div>
-            <button onclick="commentPosting()" type="button" class="btn btn-dark" style="margin-top: 10px; margin-left: 435px;">
+            <button onclick="commentPosting()" type="button" class="btn btn-success">
                 POST
             </button>
         </div>
@@ -226,8 +200,32 @@
             <tbody id="comment-box">
             </tbody>
         </table>
-
     </div>
 
+    <footer id="footerwrap">
+        <div class="footer">
+            <div class="logo">
+                <h1><a href="#!">LOGO</a></h1>
+            </div>
+            <div class="footerend">
+                <div class="footer1">
+                    <ul class="clearfix">
+                        <li><a href="#!">ⓒ FiveLineRecipe, LLC 2022</a></li>
+                        <li><a href="#!">DO NOT “SELL” MY INFO</a></li>
+                        <li><a href="#!">AD PREFERENCES</a></li>
+                        <li><a href="#!">PRIVACY</a></li>
+                        <li><a href="#!">TERMS</a></li>
+                    </ul>
+                </div>
+                <div class="footer2">
+                    <h4>CUSTOMER SUPPORT</h4><br>
+                    <ul class="clearfix">
+                        <li><a href="#!">HELP CENTRE & FAQ</a></li>
+                        <li><a href="#!">INVESTOR RELATIONS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

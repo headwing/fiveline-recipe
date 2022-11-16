@@ -177,15 +177,21 @@ html, body {
     position: absolute;
     width: 90px;
     height: 20px;
-    top: 77%;
+    top: 61%;
     left: 20px;
     transform: translateY(-50%);
     border: 0 none;
 }
+.searchtext{
+    position: absolute;
+    width: 600px;
+    left: 115px;
+    top: -50px;
+}
 .searchbutton {
     position: absolute;
     right: 10px;
-    top: 80%;
+    top: 67%;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
