@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">a
+<head>
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Btang&family=Gugi&display=swap" rel="stylesheet">
+<!--        폰트-->
+
+    <title></title>
+</head>
+<style>
+    * {
+        font-family: 'Gowun Batang';
+    }
+
+    .content{
+        width: 500px;
+        margin: 60px auto 50px auto;
+        padding-bottom: 60px;
+    }
+
+
+    .img{
+        width: 500px;
+        margin: 20px auto 20px auto;
+    }
+
+    .comm{
+        margin: 30px auto 0px auto;
+        width: 485px;
+
+    }
+
+    .box{
+        margin: 10px 0px 10px 0px;
+
+    }
+
+    .option{
+        text-align:right;
+    }
+
+</style>
+
+<script>
+        $(document).ready(function() {
+            presenting();
+            show_comment();
+        });
+
+        function show_comment() {
+            $.ajax({
+                type: 'GET',
+                url: '/comment',
+                data: {},
+                success: function (response) {
+
+                    let rows = response['comments']
+                    for (let i = 0; i < rows.length; i++) {
+                        let comment = rows[i]['comments']
+                        let temp_html = `<tr>
+                                            <td>${comment}</td>
+                                        </tr>`
+                        $('#comment-box').append(temp_html)
+                    }
+                 }
+            });
+        }
+
+
+       function presenting () {
+            $.ajax({
+                type: 'GET',
+                url: '/post',
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                    let rows = response['posting']
+                        console.log(rows.length)
+                    for (let i = 0; i < rows.length; i++) {
+                        console.log(i)
+                         // let image = rows[i]['image']
+                         let recipe = rows[i]['recipe']
+                         // let nickname = rows[i]['nickname']
+                         let star = rows[i]['star']
+                         let cookingtime = rows[i]['cookingtime']
+                         let content1 = rows[i]['content1']
+                         let content2 = rows[i]['content2']
+                         let content3 = rows[i]['content3']
+                         let content4 = rows[i]['content4']
+                         let content5 = rows[i]['content5']
+
+                        console.log(content1)
+
+
+                          let temp_html = `<div>
+                    <h2 id="recipe-box">${recipe}</h2>
+                    <div class="option">
+                       <h15 id="star-box">${star}</h15> / <h14 id="cookingtime-box">${cookingtime}</h14>
+                    </div>
+                    <div class="comm" id="content">
+                        <P>1. ${content1}</P>
+                        <P>2. ${content2}</P>
+                        <P>3. ${content3}</P>
+                        <P>4. ${content4}</P>
+                        <P>5. ${content5}</P>
+                    </div>
+                    </div>`
+
+                        $('#contents').append(temp_html)
+
+                    }
+                }
+            });
+        }
+
+
+
+        function posting() {
+            let comment = $('#comment').val()
+
+            $.ajax({
+                type: 'POST',
+                url: '/FLR',
+                data: {comment_give: comment},
+                success: function (response) {
+                    alert(response['msg'])
+                    window.location.reload()
+                    }
+                });
+        }
+
+</script>
+
+
+<body>
+    <h1>FiveLineRecipe</h1>
+    <div class="content">
+             <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png">
+        <div id="contents">
+            <p>nickname</p>
+        </div>
+
+        <div class="form-floating">
+            <div>
+               <textarea id="comment" class="form-control" placeholder="코멘트를 남겨주세요"></textarea>
+            </div>
+            <button onclick="posting()" type="button" class="btn btn-dark" style="margin-top: 10px; margin-left: 435px;">POST</button>
+        </div>
+
+
+         <table class="comment_list">
+             <thead>
+             <tr>
+                 <th scope="col">다른 사람들의 코멘트</th>
+                    </tr>
+                    </thead>
+                    <tbody id="comment-box">
+                    </tbody>
+        </table>
+
+    </div>
+
+    </body>
+</html>
