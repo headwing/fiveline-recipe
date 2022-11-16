@@ -56,7 +56,6 @@
             }
             body {
                 background-color: #F2F2F2;
-
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -64,12 +63,27 @@
                 justify-content: center;
             }
             .order {
+<<<<<<< Updated upstream:register_login/sparta_plus/project04/templates/login.html
                 width: 400px;
 
+=======
+                width: 500px;
+>>>>>>> Stashed changes:sparta_plus/project04/templates/login.html
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .order .logo a {
+                display: block;
+                width: 250px;
+                height: 250px;
+                background-image: url("../static/images/LOGO_login.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                text-indent: -9999px;
             }
             #secondBtn {
                 margin-left: 16px;
@@ -88,8 +102,15 @@
     </head>
     <body>
     <div class="order">
+<<<<<<< Updated upstream:register_login/sparta_plus/project04/templates/login.html
         <h1>FiveLineRecipe</h1>
         <p> 자취생을 위한 다섯 줄 레시피에 오신 것을 환영합니다.</p>
+=======
+        <h1 class="logo">
+            <a href="#!">LOGO</a>
+        </h1>
+        <h1> 자취인을 위한 다섯 줄 레시피에 오신 것을 환영합니다.</h1>
+>>>>>>> Stashed changes:sparta_plus/project04/templates/login.html
 
         <div class="input-group mb-3" id="idInput">
             <input type="text" class="form-control" placeholder="ID를 입력하세요." aria-label="Username"
@@ -102,8 +123,8 @@
         </div>
 
         <div class="btnList">
-            <button type="button" class="btn btn-outline-dark" onclick="login()">Sign In</button>
-            <a href="register"><button type="button" class="btn btn-dark" id="secondBtn">Sign Up</button></a>
+            <button type="button" class="btn btn-outline-success" onclick="login()">Sign In</button>
+            <a href="register"><button type="button" class="btn btn-success" id="secondBtn">Sign Up</button></a>
         </div>
     </div>
 
