@@ -62,6 +62,10 @@ def register():
 def upload():
    return render_template('upload.html')
 
+@app.route('/showrecipe')
+def showrecipe():
+   return render_template('showrecipe.html')
+
 #################################
 ##  로그인을 위한 API            ##
 #################################
@@ -158,14 +162,15 @@ def recipe_post():
         'content5': content5_receive,
         'page':count,
         'star':star_receive,
-        'image': image_receive
+        'image': image_receive,
+        'count': count
     }
 
     db.post.insert_one(doc)
 
     return jsonify({'msg': '작성 완료!'})
 
-
+####### 닉네임 가져오는 법 #############
 @app.route("/FLR/user", methods=["GET"])
 def api_valid():
     token_receive = request.cookies.get('mytoken')
@@ -179,6 +184,22 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg': '로그인 정보가 존재하지 않습니다.'})
 
 
+########### 코멘트 저장하는 것 ##############
+@app.route("/FLR/commentPosting", methods=["POST"])
+def comment_post():
+    comment_receive = request.form['comment_give']
+    doc = {
+        'comment': comment_receive
+    }
+    db.post.insert_one(doc)
+    return jsonify({'msg': 'POST 게시 완료!'})
+
+########### 저장된 게시물의 정보 불러오기 ########
+@app.route("/present", methods=["POST"])
+def post_get():
+    title_receive = str(request.form['title_give'])
+    posting_list = db.post.find_one({'recipe': title_receive}, {'_id': False})
+    return jsonify({'present': posting_list})
 
 
 if __name__ == '__main__':
