@@ -55,13 +55,8 @@
     $(document).ready(function () {
         //const name = getId();
         // listing(name);
-<<<<<<< HEAD
-        loadcomment();
-        show_comment()
-=======
         showcomment();
         loadrecipe();
->>>>>>> e18ddeef31be8e39ace268935476f046d3e9b2c0
     });
 
     function getId() {
@@ -107,21 +102,7 @@
             })
     }
 
-<<<<<<< HEAD
-    // $(document).ready(function () {
-    //     presenting();
-    //     show_comment();
-    // });
 
-    function show_comment() {
-        $.ajax({
-            type: 'POST',
-            url: '/comment',
-            data: {title_give: getId()},
-            success: function (response) {
-                let rows = response['comment']
-                console.log(rows[0][comment])
-=======
     function showcomment(){
         $.ajax({
             type: "POST",
@@ -131,7 +112,6 @@
                 console.log(response)
                 let rows = response['comment']
                 console.log(rows)
->>>>>>> e18ddeef31be8e39ace268935476f046d3e9b2c0
                 for (let i = 0; i < rows.length; i++) {
                     let comment = rows[i]['comment']
                     console.log(comment)
@@ -154,11 +134,7 @@
         $.ajax({
             type: 'POST',
             url: '/FLR/commentPosting',
-<<<<<<< HEAD
-            data: {title_give: getId(), comment_give: $('#comment').val()},
-=======
             data: {comment_give: comment, title_give:title},
->>>>>>> e18ddeef31be8e39ace268935476f046d3e9b2c0
             success: function (response) {
                 alert(response['msg'])
                 window.location.reload()
