@@ -1,6 +1,24 @@
 $(document).ready(function(){
     show_recipe();
 })
+function getId() {
+        const urlParams = new URLSearchParams(location.search);
+        console.log(urlParams.get('title'));
+        return urlParams.get('title');
+    }
+function click() {
+        const divEle = document.querySelectorAll('.card');
+        console.log(divEle);
+        for (let i = 0; i < divEle.length; i++) {
+            const titleEle = document.querySelectorAll('.card-title');
+            const text = titleEle[i].innerText;
+            console.log(text);
+            divEle[i].addEventListener('click', function () {
+                console.log('클릭됐습니다!');
+                window.location.href = '/showrecipe?title=' + text;
+            });
+        }
+    }
 
 function show_recipe(){
     $.ajax({
@@ -35,6 +53,7 @@ function show_recipe(){
                                  </div>`
                 $('#card-box').append(temp_html)
             }
+            click();
         }
     });
 }

@@ -1,249 +1,8 @@
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-@charset "utf-8";
-html,body{height: 100%;}
-=======
-<<<<<<< Updated upstream:register_login/sparta_plus/project04/static/css/style.css
-@charset "utf-8";
-html,body{height: 100%;}
-body{
-    font-family: 'Gowun Dodum', sans-serif;
-}
-
-#main_header {
-    height: 150px;
-    position: relative;
-}
-#header_top {
-    width: 1260px;
-    z-index: 1;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#header_top .logo a {
-    display: block;
-    width: 160px; height: 100px;
-    /*background-image: url(../images/LOGO.png);*/
-    background-color: #000;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-indent: -9999px;
-}
-#header_top.fixed {
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    background-color: white;
-    top: 0;
-    width: 100%;
-}
-
-.sign-out {
-    float: left;
-}
-.sign-out {
-    background: #57A719;
-    width: 120px;
-    height: 45px;
-    border-radius: 5px;
-    text-align: center;
-}
-.sign-out a {
-    display: block;
-    font-size: 16px;
-    letter-spacing: 0.095em;
-    color: white;
-    line-height: 45px;
-    font-weight: bold;
-}
-.sign-out:hover {
-    background: #364F18;
-}
-
-.menu-upload{
-    background: #f2f2f2;
-    width: 1260px;
-    height: 500px;
-    margin: 0 auto;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-.menu-upload .upload-text {
-    width: 600px;
-    height: 500px;
-}
-.menu-upload .upload-text h2 {
-    margin: 125px 0 70px 0;
-}
-.menu-upload .upload-text h3 {
-    margin-bottom: 40px;
-}
-.menu-upload .button {
-    background: #57A719;
-    color: #fff;
-    width: 120px;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.085em;
-    margin: auto;
-}
-.menu-upload .button:hover {
-    background: #364F18;
-}
-.menu{
-    margin-top: 40px;
-}
-.menu .card{
-    border: 0 none;
-    border-radius: 5px;overflow: hidden;
-    box-shadow:2px 2px 25px rgba(0,0,0,0.4);
-    cursor: pointer;
-}
-.menu .card .card-img{position: relative;}
-.menu .card .card-body:after{
-    content: "";
-    display: block;
-    border-width: 30px;
-    border-color: transparent transparent white transparent;
-    border-style: solid;
-    width: 60px;
-    box-sizing: border-box;
-    position: absolute;
-    top: 180px;
-    left: 50%;
-    transform: translate(-50%);
-}
-.menu .card .mask{
-    position: absolute;
-    width: 100%;height: 100%;
-    background: rgba(0,0,0,0.3);
-    top: 0;
-    transition: 300ms;
-}
-.menu .card:hover .mask{opacity: 0;}
-.menu .time {
-    color: #A75F46;
-}
-
-
-.search{
-    background: #fff;
-    width: 1260px;
-    height: 500px;
-    margin: auto;
-    position: relative;
-}
-.searchwrap{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-.searchinp {
-    width: 400px;
-    height: 50px;
-    border-radius: 25px;
-    border: 2px solid #000;
-    font-size: 18px;
-    text-indent: 90px;
-    box-shadow: 5px 5px 0 #A75F46, -5px -5px 0 #57A719;
-}
-.searchtitle {
-    display: block;
-    position: absolute;
-    width: 60px;
-    height: 20px;
-    text-indent: -9999px;
-    background: url(../images/searchtext.jpg);
-    top: 80%;
-    left: 20px;
-    transform: translateY(-50%);
-}
-.searchbutton {
-    position: absolute;
-    right: 10px;
-    top: 80%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border: 1px solid #aaa;
-    border-radius: 50%;
-    text-indent: -9999px;
-    background: url(../images/search.jpg) center no-repeat;
-    cursor: pointer;
-}
-
-#footerwrap {
-    height: 200px;
-    background: #A38259;
-    color: #fff;
-}
-.footer {
-    width: 1260px;
-    margin: 0 auto;
-}
-#footerwrap .logo a {
-    float: left;
-    display: block;
-    width: 160px;
-    height: 200px;
-    /*background-image: url(../images/LOGO_w.png);*/
-    background-color: #000;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-indent: -9999px;
-    margin-right: 75px;
-}
-.footerend {
-    float: left;
-    margin: 40px;
-}
-.footer1 li {
-    float: left;
-    margin: 0 20px;
-}
-.footer1 li:first-child,
-.footer2 li:first-child {
-    margin-left: 0;
-}
-.footer1 li a {
-    color: #fff;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-size: 16px;
-}
-.footer2 {
-    margin-top: 30px;
-}
-.footer2 h4 {
-    font-size: 12px;
-}
-.footer2 li {
-    float: left;
-    margin: 0 8px;
-}
-.footer2 li a {
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-=======
 @charset "utf-8";
 html, body {
     height: 100%;
 }
 
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 * {
     font-family: 'Gowun Dodum', sans-serif;
 }
@@ -252,10 +11,6 @@ html, body {
     height: 150px;
     position: relative;
 }
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-=======
-
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 #header_top {
     width: 1260px;
     z-index: 1;
@@ -267,46 +22,27 @@ html, body {
     justify-content: space-between;
     align-items: center;
 }
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-#header_nick {
-    display: flex;
-}
-=======
 
 #header_nick {
     display: flex;
 }
-
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 #header_nick .subtitle {
     padding: 10px;
     margin: 0px;
 }
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-#header_top .logo a {
-    display: block;
-    width: 400px; height: 100px;
-=======
-
 #header_top .logo a {
     display: block;
     width: 400px;
     height: 100px;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     background-image: url("../images/LOGO_main.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     text-indent: -9999px;
 }
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-#header_top.fixed {
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-=======
 
 #header_top.fixed {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     background-color: white;
     top: 0;
     width: 100%;
@@ -315,24 +51,6 @@ html, body {
 .sign-out {
     float: left;
     margin-left: 20px;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-}
-.sign-out {
-    background: #57A719;
-    width: 120px;
-    height: 45px;
-    border-radius: 5px;
-    text-align: center;
-}
-.sign-out a {
-    display: block;
-    font-size: 16px;
-    letter-spacing: 0.095em;
-    color: white;
-    line-height: 45px;
-    font-weight: bold;
-}
-=======
     background: #57A719;
     color: #fff;
     width: 120px;
@@ -344,17 +62,11 @@ html, body {
     letter-spacing: 0.095em;
 }
 
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 .sign-out:hover {
     background: #364F18;
 }
 
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-.menu-upload{
-    background: #f2f2f2;
-=======
 .menu-upload {
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     width: 1260px;
     height: 500px;
     margin: 0 auto;
@@ -363,10 +75,7 @@ html, body {
     justify-content: center;
     text-align: center;
 }
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-=======
 
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 .menu-upload .upload-text {
     height: 500px;
     display: flex;
@@ -374,14 +83,6 @@ html, body {
     justify-content: center;
     align-content: center;
 }
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-.menu-upload .upload-text h4 {
-    margin: 30px 0 30px 0;
-}
-.menu-upload .upload-text h2 {
-    margin: 5px auto 40px auto;
-}
-=======
 
 .menu-upload .upload-text h4 {
     margin: 30px 0 30px 0;
@@ -391,7 +92,6 @@ html, body {
     margin: 5px auto 40px auto;
 }
 
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 .menu-upload .button {
     background: #57A719;
     color: #fff;
@@ -400,29 +100,6 @@ html, body {
     line-height: 45px;
     border-radius: 5px;
     text-align: center;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-    font-weight: bold;
-    letter-spacing: 0.085em;
-    margin: auto;
-}
-.menu-upload .button:hover {
-    background: #364F18;
-}
-.menu{
-    margin-top: 40px;
-}
-.menu .card{
-    border: 0 none;
-    border-radius: 5px;overflow: hidden;
-    box-shadow:2px 2px 25px rgba(0,0,0,0.4);
-    cursor: pointer;
-}
-.menu .card .card-img{position: relative;}
-.menu .card .card-body:after{
-    content: "";
-    display: block;
-    border-width: 30px;
-=======
     font-weight: normal;
     letter-spacing: 0.095em;
     margin: auto;
@@ -452,26 +129,11 @@ html, body {
     content: "";
     display: block;
     border-width: 50px;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     border-color: transparent transparent white transparent;
     border-style: solid;
     width: 60px;
     box-sizing: border-box;
     position: absolute;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-    top: 180px;
-    left: 50%;
-    transform: translate(-50%);
-}
-.menu .card .mask{
-    position: absolute;
-    width: 100%;height: 100%;
-    background: rgba(0,0,0,0.3);
-    top: 0;
-    transition: 300ms;
-}
-.menu .card:hover .mask{opacity: 0;}
-=======
     top: 190px;
     left: 50%;
     transform: translate(-50%);
@@ -490,7 +152,6 @@ html, body {
     opacity: 0;
 }
 
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 .menu .time {
     color: #A75F46;
 }
@@ -510,11 +171,7 @@ html, body {
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
 
-.searchinp {
-    width: 400px;
-=======
 .searchtext{
     position: absolute;
     width: 600px;
@@ -524,44 +181,25 @@ html, body {
 }
 .searchinp {
     width: 600px;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     height: 50px;
     border-radius: 25px;
     border: 2px solid #000;
     font-size: 18px;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-    text-indent: 90px;
-=======
     text-indent: 125px;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     box-shadow: 5px 5px 0 #A75F46, -5px -5px 0 #57A719;
 }
 .searchtitle {
     display: block;
     position: absolute;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-    width: 60px;
-    height: 20px;
-    text-indent: -9999px;
-    background: url(../images/searchtext.jpg);
-    top: 80%;
-    left: 20px;
-    transform: translateY(-50%);
-=======
     top: 65%;
     left: 20px;
     transform: translateY(-50%);
     border: 0 none;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 }
 .searchbutton {
     position: absolute;
     right: 10px;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-    top: 80%;
-=======
     top: 67%;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
@@ -576,31 +214,11 @@ html, body {
     height: 200px;
     background: #A38259;
     color: #fff;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-=======
     position: relative;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 }
 .footer {
     width: 1260px;
     margin: 0 auto;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-}
-#footerwrap .logo a {
-    float: left;
-    display: block;
-    width: 160px;
-    height: 200px;
-    /*background-image: url(../images/LOGO_w.png);*/
-    background-color: #000;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-indent: -9999px;
-    margin-right: 75px;
-}
-.footerend {
-    float: left;
-=======
     background: none;
 }
 #footerwrap .logo a {
@@ -619,7 +237,6 @@ html, body {
     position: absolute;
     top: 0px;
     left: 360px;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
     margin: 40px;
 }
 .footer1 li {
@@ -641,13 +258,9 @@ html, body {
     margin-top: 30px;
 }
 .footer2 h4 {
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-    font-size: 12px;
-=======
     position: absolute;
     font-size: 12px;
     left: 32px;
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 }
 .footer2 li {
     float: left;
@@ -658,8 +271,4 @@ html, body {
     color: #fff;
     font-size: 12px;
     font-weight: bold;
-<<<<<<< HEAD:sparta_plus/project04/static/css/style.css
-=======
->>>>>>> Stashed changes:sparta_plus/project04/static/css/style.css
->>>>>>> 3147f5d7a76d549414a21186b12a8ff8c7d8d272:register_login/sparta_plus/project04/static/css/style.css
 }

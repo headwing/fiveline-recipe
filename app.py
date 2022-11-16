@@ -5,6 +5,9 @@ from pymongo import MongoClient
 client = MongoClient("mongodb://YouJung:sparta@ac-alf7myn-shard-00-00.f8q7bml.mongodb.net:27017,ac-alf7myn-shard-00-01.f8q7bml.mongodb.net:27017,ac-alf7myn-shard-00-02.f8q7bml.mongodb.net:27017/?ssl=true&replicaSet=atlas-7rq6ec-shard-0&authSource=admin&retryWrites=true&w=majority")
 db = client.FLR
 
+import certifi
+ca=certifi.where()
+
 @app.route('/')
 def home():
     return render_template('index.html')

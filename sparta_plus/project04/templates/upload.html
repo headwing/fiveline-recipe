@@ -71,6 +71,7 @@
         let content5 = $('#content5').val()
         let image = $('#image').val()
         let star = $('#star').val()
+
         $.ajax({
             type: 'POST',
             url: '/FLR',
@@ -82,7 +83,6 @@
             }
         });
     }
-
 
 $(document).ready(function() {
     show_nickname();
@@ -115,7 +115,8 @@ function show_nickname(){
                     </div>
 
                     <span class="input-group-text label" id="inputGroup-sizing-lg4">사진</span>
-                    <input id="image" type="file" name="myImage" accept="image/*"/>
+                    <input id="image" type="text" class="form-control"
+                           required placeholder="URL을 입력해주세요.">
 
                 </div>
 
