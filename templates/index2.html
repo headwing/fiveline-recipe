@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">a
+<head>
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Btang&family=Gugi&display=swap" rel="stylesheet">
+<!--        폰트-->
+  <title></title>
+</head>
+
+<style>
+
+</style>
+
+<script>
+
+    function presenting () {
+            $.ajax({
+                type: 'GET',
+                url: '/post',
+                data: {},
+                success: function (response) {
+                    let rows = response['posting']
+                    for (let i = 0; i < rows.length; i++) {
+                         // let image = rows[i]['image']
+                         let recipe = rows[i]['recipe']
+                         // let nickname = rows[i]['nickname']
+                         let star = rows[i]['star']
+                         let cookingtime = rows[i]['cookingtime']
+                         let content1 = rows[i]['content1']
+                         let content2 = rows[i]['content2']
+                         let content3 = rows[i]['content3']
+                         let content4 = rows[i]['content4']
+                         let content5 = rows[i]['content5']
+
+                        let temp_html = `<!--<h2 id="nickname">nick</h2>-->
+<!--                                        <h3 id="image">image</h3>-->
+                                        <h4 id="recipe">menu</h4>
+                                        <h5 id="star">star</h5>
+                                        <h6 id="cookingtime">time</h6>
+                                        <h7 id="content1">1</h7>
+                                        <h8 id="content2">2</h8>
+                                        <h9 id="content3">3</h9>
+                                        <h10 id="content4">4</h10>
+                                        <h11 id="content5">5</h11> `
+
+                         $('#contents').append(temp_html)
+
+                    }
+                }
+            });
+        }
+
+
+  // nickname, image, recipe, star, time, content1, content2, content3, content4, content5
+
+</script>
+
+
+<body>
+    <div class="contents">
+        <h2 id="nickname">nick</h2>
+    <h3 id="image">image</h3>
+    <h4 id="recipe">menu</h4>
+    <h5 id="star">star</h5>
+    <h6 id="cookingtime">time</h6>
+    <h7 id="content1">1</h7>
+    <h8 id="content2">2</h8>
+    <h9 id="content3">3</h9>
+    <h10 id="content4">4</h10>
+    <h11 id="content5">5</h11>
+
+    </div>
+
+
+
+</body>
+
+</html>
