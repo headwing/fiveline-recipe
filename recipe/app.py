@@ -12,8 +12,8 @@ import hashlib
 SECRET_KEY = 'SPARTA'
 
 @app.route('/')
-def home():
-   return render_template('index.html')
+def upload():
+   return render_template('upload.html')
 
 @app.route("/FLR", methods=["POST"])
 def recipe_post():
