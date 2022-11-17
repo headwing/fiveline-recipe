@@ -81,9 +81,13 @@
                 let content3 = rows['content3']
                 let content4 = rows['content4']
                 let content5 = rows['content5']
+                let nick = rows['nickname']
 
                 let temp_html = `<div>
-                <h2 id="recipe-box">${recipe}</h2>
+                <ul>
+                <li class="recipe-box">${recipe}</li><li class="id">${nick}</li>
+                </ul>
+
                 <img src="${image}">
                 <div class="option">
                    <h15 id="star-box">${star}</h15> / <h14 id="cookingtime-box">${cookingtime}</h14>
@@ -112,10 +116,12 @@
                 let rows = response['comment']
                 console.log(rows)
                 for (let i = 0; i < rows.length; i++) {
+                    let nickname = rows[i]['nickname']
                     let comment = rows[i]['comment']
                     console.log(comment)
                     let temp_html = `<tr>
                                             <td>${comment}</td>
+                                            <td>${nickname}</td>
                                         </tr>`
                     $('#comment-box').append(temp_html)
                 }

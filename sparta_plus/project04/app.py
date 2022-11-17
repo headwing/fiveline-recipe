@@ -194,9 +194,13 @@ def api_valid():
 def comment_post():
     comment_receive = request.form['comment_give']
     title_receive = request.form['title_give']
+    token_receive = request.cookies.get('mytoken')
+    payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+    userinfo = db.user.find_one({'id': payload['id']}, {'_id': 0})
     doc = {
         'comment': comment_receive,
-        'title': title_receive
+        'title': title_receive,
+        'nickname': userinfo["nick"]
     }
     db.comment.insert_one(doc)
     return jsonify({'msg': 'POST 게시 완료!'})
