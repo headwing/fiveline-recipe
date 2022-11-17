@@ -198,12 +198,12 @@ def comment_post():
     return jsonify({'msg': 'POST 게시 완료!'})
 
 ############## 코멘트 불러오기 ###################
-@app.route("/comment", methods=["POST"])
-def comment_get():
-    title_receive = str(request.form['title_give'])
-    comments_list = list(db.comment.find({'title': title_receive}, {'_id': False}))
-    print(comments_list)
-    return jsonify({'comments': comments_list})
+# @app.route("/comment", methods=["POST"])
+# def comment_get():
+#     title_receive = str(request.form['title_give'])
+#     comments_list = list(db.comment.find({'title': title_receive}, {'_id': False}))
+#     print(comments_list)
+#     return jsonify({'comments': comments_list})
 
 ########### 저장된 게시물의 정보 불러오기 ########
 @app.route("/present", methods=["POST"])
@@ -212,6 +212,7 @@ def post_get():
     posting_list = db.post.find_one({'recipe': title_receive}, {'_id': False})
     return jsonify({'present': posting_list})
 
+############## 코멘트 불러오기 ###################
 @app.route("/comment", methods=["POST"])
 def comment_get():
     title_receive = str(request.form['title_give'])
