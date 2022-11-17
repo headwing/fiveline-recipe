@@ -11,7 +11,6 @@
     z-index: 1;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     position: fixed;
-;
 }
 
 #header_top .logo a {
@@ -32,6 +31,15 @@
     width: 500px;
     margin: 60px auto 50px auto;
     padding-bottom: 60px;
+}
+.btn-delete{
+    float: right;
+    margin-top: 15px;
+    background: #57A719;
+    color: white;
+    border: 1px solid #198754;
+    border-radius: 5px;
+    padding: 6px 12px;
 }
 #contents{
 
