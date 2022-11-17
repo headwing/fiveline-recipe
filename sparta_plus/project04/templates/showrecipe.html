@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -12,44 +13,12 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Btang&family=Gugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <!--        폰트-->
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/showrecipe.css">
 
-    <title></title>
 </head>
-<style>
-    * {
-        font-family: 'Gowun Batang';
-    }
-
-    .content {
-        width: 500px;
-        margin: 60px auto 50px auto;
-        padding-bottom: 60px;
-    }
-
-
-    .img {
-        width: 500px;
-        margin: 20px auto 20px auto;
-    }
-
-    .comm {
-        margin: 30px auto 0px auto;
-        width: 485px;
-
-    }
-
-    .box {
-        margin: 10px 0px 10px 0px;
-
-    }
-
-    .option {
-        text-align: right;
-    }
-
-</style>
 
 <script>
     $(document).ready(function () {
@@ -84,11 +53,12 @@
                 let nick = rows['nickname']
 
                 let temp_html = `<div>
-                <ul>
-                <li class="recipe-box">${recipe}</li><li class="id">${nick}</li>
+                <ul class="clearfix name">
+                    <li class="recipe-box">${recipe}</li>
+                    <li class="id">${nick}</li>
                 </ul>
 
-                <img src="${image}">
+                <img src="${image}" class="img">
                 <div class="option">
                    <h15 id="star-box">${star}</h15> / <h14 id="cookingtime-box">${cookingtime}</h14>
                 </div>
@@ -119,9 +89,9 @@
                     let nickname = rows[i]['nickname']
                     let comment = rows[i]['comment']
                     console.log(comment)
-                    let temp_html = `<tr>
-                                            <td>${comment}</td>
-                                            <td>${nickname}</td>
+                    let temp_html = `<tr class="comment-show">
+                                            <td class="comment">${comment}</td>
+                                            <td class="nickname">${nickname}</td>
                                         </tr>`
                     $('#comment-box').append(temp_html)
                 }
@@ -151,7 +121,13 @@
 
 
 <body>
-    <h1>FiveLineRecipe</h1>
+    <header id="main_header">
+        <div id="header_top">
+            <h1 class="logo">
+                <a href="/">LOGO</a>
+            </h1>
+        </div>
+    </header>
     <div class="content">
         <img class="img"
              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png">
@@ -163,7 +139,7 @@
             <div>
                 <textarea id="comment" class="form-control" placeholder="코멘트를 남겨주세요"></textarea>
             </div>
-            <button onclick="commentPosting()" type="button" class="btn btn-dark" style="margin-top: 10px; margin-left: 435px;">
+            <button onclick="commentPosting()" type="button" class="btn btn-success" style="margin-top: 10px; margin-left: 435px;">
                 POST
             </button>
         </div>
