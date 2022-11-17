@@ -142,6 +142,7 @@ def recipe_post():
     token_receive = request.cookies.get('mytoken')
     payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
     userinfo = db.user.find_one({'id': payload['id']}, {'_id': 0})
+
     recipe_receive = request.form['title_give']
     cookingtime_receive = request.form['cookingtime_give']
     content1_receive = request.form['content1_give']
@@ -221,12 +222,31 @@ def post_get():
     posting_list = db.post.find_one({'recipe': title_receive}, {'_id': False})
     return jsonify({'present': posting_list})
 
+########### 저장된 게시물 삭제하기 ########
+@app.route("/delete", methods=["POST"])
+def post_delete():
+    token_receive = request.cookies.get('mytoken')
+    payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+    userinfo = db.user.find_one({'id': payload['id']}, {'_id': 0})
+    usernick = userinfo["nick"]
+    print(usernick)
+
+    title_receive = str(request.form['title_give'])
+    posting_list = db.post.find_one({'recipe': title_receive}, {'_id': False})
+    print(posting_list["nickname"])
+
+    if (usernick == posting_list["nickname"]):
+        db.post.delete_one({'recipe': title_receive})
+        return jsonify({'msg': '삭제 성공!'})
+    else:
+        return jsonify({'msg': '당신의 게시물이 아닙니다.'})
+
+
 ############## 코멘트 불러오기 ###################
 @app.route("/comment", methods=["POST"])
 def comment_get():
     title_receive = str(request.form['title_give'])
     posting_list = list(db.comment.find({'title': title_receive}, {'_id': False}))
-    print(posting_list)
     return jsonify({'comment': posting_list})
 
 
