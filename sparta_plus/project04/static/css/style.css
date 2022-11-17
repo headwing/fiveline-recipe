@@ -2,7 +2,6 @@
 html, body {
     height: 100%;
 }
-
 * {
     font-family: 'Gowun Dodum', sans-serif;
 }
@@ -22,10 +21,10 @@ html, body {
     justify-content: space-between;
     align-items: center;
 }
-
 #header_nick {
     display: flex;
 }
+
 #header_nick .subtitle {
     padding: 10px;
     margin: 0px;
@@ -40,19 +39,11 @@ html, body {
     background-repeat: no-repeat;
     text-indent: -9999px;
 }
-
-#header_top.fixed {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    background-color: white;
-    top: 0;
-    width: 100%;
-}
-
 .sign-out {
     float: left;
     margin-left: 20px;
     background: #57A719;
-    color: #fff;
+    color: white;
     width: 120px;
     height: 45px;
     border: 0 none;
@@ -61,7 +52,6 @@ html, body {
     font-weight: bold;
     letter-spacing: 0.095em;
 }
-
 .sign-out:hover {
     background: #364F18;
 }
@@ -75,7 +65,6 @@ html, body {
     justify-content: center;
     text-align: center;
 }
-
 .menu-upload .upload-text {
     height: 500px;
     display: flex;
@@ -83,15 +72,12 @@ html, body {
     justify-content: center;
     align-content: center;
 }
-
 .menu-upload .upload-text h4 {
     margin: 30px 0 30px 0;
 }
-
 .menu-upload .upload-text h2 {
     margin: 5px auto 40px auto;
 }
-
 .menu-upload .button {
     background: #57A719;
     color: #fff;
@@ -104,21 +90,29 @@ html, body {
     letter-spacing: 0.095em;
     margin: auto;
 }
-
 .menu-upload .button:hover {
     background: #364F18;
 }
-
-.menu {
+.menu{
     margin-top: 40px;
 }
-
-.menu .card {
+.menu .card{
     border: 0 none;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;overflow: hidden;
+    box-shadow:2px 2px 25px rgba(0,0,0,0.4);
     cursor: pointer;
+}
+.menu .card .card-img{position: relative;}
+.menu .card .card-body:after{
+    content: "";
+    display: block;
+    border-width: 30px;
+    font-weight: normal;
+    letter-spacing: 0.095em;
+    margin: auto;
+}
+.card-body .btn{
+    background: #57A719;
 }
 
 .menu .card .card-img {
@@ -128,17 +122,16 @@ html, body {
 .menu .card .card-body:after {
     content: "";
     display: block;
-    border-width: 50px;
+    border-width: 40px;
     border-color: transparent transparent white transparent;
     border-style: solid;
     width: 60px;
     box-sizing: border-box;
     position: absolute;
-    top: 190px;
+    top: 203px;
     left: 50%;
     transform: translate(-50%);
 }
-
 .menu .card .mask {
     position: absolute;
     width: 100%;
@@ -156,7 +149,6 @@ html, body {
     color: #A75F46;
 }
 
-
 .search{
     background: #fff;
     width: 1260px;
@@ -171,14 +163,6 @@ html, body {
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-
-.searchtext{
-    position: absolute;
-    width: 600px;
-    left: 115px;
-    top: -50px;
-
-}
 .searchinp {
     width: 600px;
     height: 50px;
@@ -191,10 +175,18 @@ html, body {
 .searchtitle {
     display: block;
     position: absolute;
-    top: 65%;
+    width: 90px;
+    height: 20px;
+    top: 61%;
     left: 20px;
     transform: translateY(-50%);
     border: 0 none;
+}
+.searchtext{
+    position: absolute;
+    width: 600px;
+    left: 115px;
+    top: -50px;
 }
 .searchbutton {
     position: absolute;
@@ -220,6 +212,9 @@ html, body {
     width: 1260px;
     margin: 0 auto;
     background: none;
+}
+.footerend {
+    float: left;
 }
 #footerwrap .logo a {
     position: absolute;
@@ -258,6 +253,7 @@ html, body {
     margin-top: 30px;
 }
 .footer2 h4 {
+    font-size: 12px;
     position: absolute;
     font-size: 12px;
     left: 32px;

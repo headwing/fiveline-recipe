@@ -1,0 +1,130 @@
+* {
+    font-family: 'Gowun Dodum';
+}
+#main_header {
+    height: 150px;
+    position: relative;
+}
+#header_top {
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    position: fixed;
+;
+}
+
+#header_top .logo a {
+    display: block;
+    width: 400px;
+    height: 100px;
+    background-image: url("../images/LOGO_main.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+
+
+
+.content {
+    width: 500px;
+    margin: 60px auto 50px auto;
+    padding-bottom: 60px;
+}
+#contents{
+
+}
+
+.content .btn{
+    margin-top: 10px;
+    margin-left: 435px;
+}
+.img {
+    width: 500px;
+    margin: 20px auto;
+}
+
+.comm {
+    margin: 30px auto 0px auto;
+    width: 485px;
+
+}
+
+.box {
+    margin: 10px 0px 10px 0px;
+
+}
+
+.option {
+    text-align: right;
+}
+
+
+#footerwrap {
+    height: 200px;
+    background: #A38259;
+    color: #fff;
+    position: relative;
+}
+.footer {
+    width: 1260px;
+    margin: 0 auto;
+    background: none;
+}
+.footerend {
+    float: left;
+}
+#footerwrap .logo a {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    display: block;
+    width: 240px;
+    height: 150px;
+    background-image: url(../images/LOGO_FOOTER.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+.footerend {
+    position: absolute;
+    top: 0px;
+    left: 360px;
+    margin: 40px;
+}
+.footer1 li {
+    float: left;
+    margin: 0 20px;
+}
+.footer1 li:first-child,
+.footer2 li:first-child {
+    margin-left: 0;
+}
+.footer1 li a {
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.footer2 {
+    margin-top: 30px;
+}
+.footer2 h4 {
+    font-size: 12px;
+    position: absolute;
+    font-size: 12px;
+    left: 32px;
+}
+.footer2 li {
+    float: left;
+    margin: 0 8px;
+}
+.footer2 li a {
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}

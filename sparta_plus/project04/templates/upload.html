@@ -9,6 +9,7 @@
             crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/upload.css">
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
@@ -19,47 +20,6 @@
             crossorigin="anonymous"></script>
     <title>포스팅</title>
 </head>
-<style>
-    * {
-        text-align: left;
-
-    }
-
-    .Line-1 {
-        width: 1140px;
-        height: 1px;
-        margin: 20px 0 20px;
-        background-color: #000;
-    }
-
-    body {
-        background-color: #f2f2f2;
-    }
-
-    .main {
-        background-color: white;
-        width: 1200px;
-        height: 700px;
-        flex-grow: 0;
-
-        margin: 0px;
-        padding: 64px 62px 62px;
-        border-radius: 10px;
-        border: solid 1px #000;
-        background-color: #fff;
-        align-content: flex-start;
-    }
-
-    .upload-menu {
-        width: 1440px;
-        height: 1024px;
-        flex-grow: 0;
-        margin: 31.6px auto auto auto;
-        background-color: #f2f2f2;
-    }
-
-
-</style>
 <script>
     function save_post() {
         let title = $('#title').val()
@@ -71,7 +31,6 @@
         let content5 = $('#content5').val()
         let image = $('#image').val()
         let star = $('#star').val()
-
         $.ajax({
             type: 'POST',
             url: '/FLR',
@@ -83,6 +42,7 @@
             }
         });
     }
+
 
 $(document).ready(function() {
     show_nickname();
@@ -104,45 +64,45 @@ function show_nickname(){
     }
 </script>
 <body>
-
+    <div class="upload-menu">
         <div class="art_sign">
             <form>
                 <div class="input-group input-group-lg" id="titleImage">
-                    <span class="input-group-text label" id="inputGroup-sizing-lg1">레시피 제목</span>
+                    <span class="input-group-text label" id="inputGroup-sizing-lg1">레시피 이름</span>
                     <input id="title" type="text" class="form-control"
-                           required placeholder="제목을 입력해주세요.">
+                           required placeholder="이름을 입력해주세요.">
 
                     <tbody class="nicknamebox">
 
                     </tbody>
 
                     <span class="input-group-text label" id="inputGroup-sizing-lg4">사진</span>
-                    <input id="image" type="text" class="form-control"
+                    <input id="title" type="text" class="form-control"
                            required placeholder="URL을 입력해주세요.">
 
                 </div>
 
-                <div id="cookingMethod">
+                <div class="cookingMethod">
                     <span class="input-group-text label" id="inputGroup-sizing-lg5">조리방법</span>
                     <div class="input-group">
-                    <textarea id="content1" class="form-control" name="content1" rows="1" cols="160"
-                              placeholder="1번 조리방법을 작성해주세요." required></textarea>
+                        <textarea id="content1" class="form-control" name="content1" rows="1" cols="160"
+                                  placeholder="1번 조리방법을 작성해주세요." required></textarea>
                     </div>
                     <div class="input-group">
-                    <textarea id="content2" class="form-control" name="content2" rows="1" cols="160"
-                              placeholder="2번 조리방법을 작성해주세요." required></textarea>
+                        <textarea id="content2" class="form-control" name="content2" rows="1" cols="160"
+                                  placeholder="2번 조리방법을 작성해주세요." required></textarea>
                     </div>
                     <div class="input-group">
-                    <textarea id="content3" class="form-control" name="content3" rows="1" cols="160"
-                              placeholder="3번 조리방법을 작성해주세요." required></textarea>
+                        <textarea id="content3" class="form-control" name="content3" rows="1" cols="160"
+                                  placeholder="3번 조리방법을 작성해주세요." required></textarea>
                     </div>
                     <div class="input-group">
-                    <textarea id="content4" class="form-control" name="content4" rows="1" cols="160"
-                              placeholder="4번 조리방법을 작성해주세요." required></textarea>
+                        <textarea id="content4" class="form-control" name="content4" rows="1" cols="160"
+                                  placeholder="4번 조리방법을 작성해주세요." required></textarea>
                     </div>
                     <div class="input-group">
-                    <textarea id="content5" class="form-control" name="content5" rows="1" cols="160"
-                              placeholder="5번 조리방법을 작성해주세요." required></textarea>
+                        <textarea id="content5" class="form-control" name="content5" rows="1" cols="160"
+                                  placeholder="5번 조리방법을 작성해주세요." required></textarea>
                     </div>
                 </div>
 
@@ -157,22 +117,20 @@ function show_nickname(){
                     <span class="input-group-text label">별점</span>
                     <select required id="star" class="form-select" aria-label="Default select example">
                         <option value="" disabled selected>레시피 별점을 남겨주세요</option>
-                        <option value="*">*</option>
-                        <option value="**">**</option>
-                        <option value="***">***</option>
-                        <option value="****">****</option>
-                        <option value="*****">*****</option>
+                        <option value="*">⭐</option>
+                        <option value="**">⭐⭐</option>
+                        <option value="***">⭐⭐⭐</option>
+                        <option value="****">⭐⭐⭐⭐</option>
+                        <option value="*****">⭐⭐⭐⭐⭐</option>
                     </select>
                 </div>
-                <div id="buttons">
-                    <button type="button" class="btn btn-outline-dark" onclick="save_post()">Post</button>
-                    <button type="button" class="btn btn-dark" onclick="location.href='/'">Cancel</button>
+                <div class="buttons">
+                    <button type="button" class="btn btn-outline-success" onclick="save_post()">Post</button>
+                    <button type="button" class="btn btn-success" onclick="location.href='/'">Cancel</button>
                 </div>
+            </form>
         </div>
-</form>
-</div>
-
-</div>
+    </div>
 </div>
 
 

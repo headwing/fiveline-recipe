@@ -3,38 +3,77 @@ html,body{height: 100%;}
 * {
     font-family: 'Gowun Dodum', sans-serif;
 }
-body {
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.upload-menu{
 
 }
 .art_sign {
     background-color: white;
+    position: relative;
     width: 960px;
-    height: 500px;
-    padding: 32px 32px 32px 32px;
-    margin-top: 100px;
-
+    margin: 0 auto;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-
     border-radius: 20px;
 }
 .input-group {
     width: 960px;
 }
+.input-group .input-group-text.label{
+    background: #f2ffe8
+}
+.cookingMethod .input-group-text.label{
+    background: #f2ffe8;
+    font-size: 20px;
+    height: 50px;
+}
+
 .label {
     font-size: 20px;
 }
-#buttons {
+.buttons {
     margin-top: 20px;
 }
+.buttons .btn-success{
+    border: 1px solid #57A719;
+    background: #57A719;
+}
 #titleImage,
-#cookingMethod {
+.cookingMethod {
     margin-bottom: 20px;
 }
+.cookingMethod .form-control{
+    line-height: 50px;
+}
+
+.Line-1 {
+    width: 1140px;
+    height: 1px;
+    margin: 20px 0 20px;
+    background-color: #000;
+}
+
+
+.main {
+    background-color: white;
+    width: 1200px;
+    height: 700px;
+    flex-grow: 0;
+
+    margin: 0px;
+    padding: 64px 62px 62px;
+    border-radius: 10px;
+    border: solid 1px #000;
+    background-color: #fff;
+    align-content: flex-start;
+}
+
+.upload-menu {
+    width: 1440px;
+    height: 1024px;
+    flex-grow: 0;
+    margin: 31.6px auto auto auto;
+}
+
