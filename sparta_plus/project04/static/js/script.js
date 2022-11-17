@@ -36,7 +36,7 @@ function show_recipe(){
                 let temp_html = `<div class="col-md-6 col-lg-4 mb-3">
                                     <div class="card">
                                         <div class="card-img">
-                                            <img src="${image}" alt="" class="img-fluid w-100">
+                                            <img src="${image}" alt="" class="img-fluid w-100 h-100">
                                             <div class="mask"></div>
                                         </div>
                                         <div class="card-body">
