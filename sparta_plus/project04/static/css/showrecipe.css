@@ -127,4 +127,39 @@
     color: #fff;
     font-size: 12px;
     font-weight: bold;
+<<<<<<< HEAD
 }
+=======
+}
+
+.name{
+    padding: 0;
+}
+.name li{
+    float: left;
+    left: -20px;
+}
+.recipe-box{
+    font-weight: bold;
+    font-size: 30px;
+}
+.id{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.comment_list{
+    width: 500px;
+
+}
+.comment-show{
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.form-floating .btn-success{
+    background: #57A719;
+}
+
+>>>>>>> 67669a01b3d5dd4342d6b2a9f86fc59b101eefdf

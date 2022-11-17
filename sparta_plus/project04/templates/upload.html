@@ -54,7 +54,6 @@ function show_nickname(){
     url: "/FLR/user",
     data: {},
     success: function (response) {
-        console.log(response)
         let nickname = response['nickname'];
         let temp_html = `<label>닉네임</label><div id="nickname">${nickname}</div>>`
             $("#nicknamebox").append(temp_html);
@@ -72,12 +71,11 @@ function show_nickname(){
                     <input id="title" type="text" class="form-control"
                            required placeholder="이름을 입력해주세요.">
 
-                    <tbody class="nicknamebox">
-
-                    </tbody>
+                    <div class="nicknamebox">
+                    </div>
 
                     <span class="input-group-text label" id="inputGroup-sizing-lg4">사진</span>
-                    <input id="image" type="text" class="form-control"
+                    <input id="title" type="text" class="form-control"
                            required placeholder="URL을 입력해주세요.">
 
                 </div>
@@ -117,11 +115,19 @@ function show_nickname(){
                     <span class="input-group-text label">별점</span>
                     <select required id="star" class="form-select" aria-label="Default select example">
                         <option value="" disabled selected>레시피 별점을 남겨주세요</option>
+<<<<<<< HEAD
                         <option value="⭐">⭐</option>
                         <option value="⭐⭐">⭐⭐</option>
                         <option value="⭐⭐⭐">⭐⭐⭐</option>
                         <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
                         <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+=======
+                        <option value="*">⭐</option>
+                        <option value="**">⭐⭐</option>
+                        <option value="***">⭐⭐⭐</option>
+                        <option value="****">⭐⭐⭐⭐</option>
+                        <option value="*****">⭐⭐⭐⭐⭐</option>
+>>>>>>> 67669a01b3d5dd4342d6b2a9f86fc59b101eefdf
                     </select>
                 </div>
                 <div class="buttons">
