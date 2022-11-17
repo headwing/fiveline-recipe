@@ -94,6 +94,7 @@ function show_nickname(){
     url: "/FLR/user",
     data: {},
     success: function (response) {
+        console.log(response)
         let nickname = response['nickname'];
         let temp_html = `<label>닉네임</label><div id="nickname">${nickname}</div>>`
             $("#nicknamebox").append(temp_html);
@@ -111,8 +112,9 @@ function show_nickname(){
                     <input id="title" type="text" class="form-control"
                            required placeholder="제목을 입력해주세요.">
 
-                    <div class="nicknamebox">
-                    </div>
+                    <tbody class="nicknamebox">
+
+                    </tbody>
 
                     <span class="input-group-text label" id="inputGroup-sizing-lg4">사진</span>
                     <input id="image" type="text" class="form-control"

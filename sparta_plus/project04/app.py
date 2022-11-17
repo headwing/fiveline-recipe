@@ -139,6 +139,9 @@ def recipe_get():
 
 @app.route("/FLR", methods=["POST"])
 def recipe_post():
+    token_receive = request.cookies.get('mytoken')
+    payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+    userinfo = db.user.find_one({'id': payload['id']}, {'_id': 0})
     recipe_receive = request.form['title_give']
     cookingtime_receive = request.form['cookingtime_give']
     content1_receive = request.form['content1_give']
@@ -163,7 +166,9 @@ def recipe_post():
         'page':count,
         'star':star_receive,
         'image': image_receive,
-        'count': count
+        'count': count,
+        'nickname': userinfo["nick"]
+
     }
 
     db.post.insert_one(doc)
